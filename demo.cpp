@@ -38,6 +38,7 @@ double round_to(double value, double precision = 0.0001){
 
 
 vector<vector<double> > mat;
+vector<double> heuristic;
 vector<string> vocab;
 int L, n;
 
@@ -51,23 +52,25 @@ class Node{
     double cum_cost, hn;
     string type;
 
-    Node (int i, double cum_cost, int seq_len, vector<int> seq, string type="ucs"){
+    Node (int i, double cum_cost, int seq_len, vector<int> seq, double hn=0, string type="ucs"){
         this->i = i;
         this->cum_cost = cum_cost;
-        this->hn = 0;
+        this->hn = hn;
         this->seq_len = seq_len;
         this->seq = seq;
         this->type = type;
     }
-    double get_cum_cost(){
-        return this->cum_cost;
+
+    double get_fn(){
+        if(this->type == "ucs"){
+            return this->cum_cost;
+        } else if (this->type == "greedy"){
+            return this->hn;
+        } else {
+            return this->cum_cost + this->hn;
+        }
     }
-    double get_hn(){
-        return this->hn;
-    }
-    double get_a_star_cost(){
-        return this->cum_cost + this->hn;
-    }
+
     void display(){
         printf("%d %f\n", i, cum_cost);
     }
@@ -80,27 +83,19 @@ class Node{
 
 class Fringe {
     private:
-    string type;
     public:
-    Fringe(string type="ucs"){
-        this->type = type;
-    }
     bool operator()(Node i, Node j){
-        if(this->type == "ucs"){
-            return i.get_cum_cost() < j.get_cum_cost();
-        } 
-        return i.get_cum_cost() < j.get_cum_cost();
+        return i.get_fn() < j.get_fn();
     }
 };
 
 
 
-
-vector<int> search(int& total){
+vector<int> search(int& total, string type="ucs"){
     vector<int> res;
     priority_queue<Node, vector<Node>, Fringe> pq;
     vector<int> init_seq; init_seq.push_back(-1);
-    Node node(-1, 1, 0, init_seq);
+    Node node(-1, 1, 0, init_seq, INT_MAX, type);
     pq.push(node);
 
     while(!pq.empty()){
@@ -108,20 +103,21 @@ vector<int> search(int& total){
         total++;
 
         if(curr.seq_len == n){
-            printf("Current score: %f\n", curr.cum_cost);
+            printf("Node cost : %f\n", curr.get_fn());
             res = curr.get_seq();
             break;
         }
 
         pq.pop();
 
-
         for(int i=0; i<L; i++){
+            if(i==curr.i){ continue; }
+
             int row = curr.i == -1 ? L : curr.i;
             double child_cost = round_to(curr.cum_cost*mat[row][i]);
             vector<int> child_seq = curr.get_seq();
             child_seq.push_back(i);
-            Node child(i, child_cost, curr.seq_len+1, child_seq);
+            Node child(i, child_cost, curr.seq_len+1, child_seq, heuristic[i], type);
             pq.push(child);
         }
 
@@ -177,11 +173,12 @@ int main(){
     n=5; L = mat.size()-2;
 
     normalize();
+    heuristic = mat.back();
 
 
     int nodes_explored = 0;
 
-    vector<int> idxs= search(nodes_explored);
+    vector<int> idxs= search(nodes_explored, "astar");
     printf("Total score: %f\n", score(idxs));
     printf("Total nodes explored: %d\n", nodes_explored);
     string ans = "\n";
@@ -196,7 +193,6 @@ int main(){
     ans += " <eos>\n";
 
     cout << ans << endl;
-
 
     return 0;
 }
