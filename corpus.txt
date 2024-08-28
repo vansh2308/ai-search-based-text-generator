@@ -1,0 +1,201 @@
+<sos> The cat ate a fish <eos>
+<sos> Cat saw a bird fly <eos>
+<sos> Cat saw a fish <eos>
+<sos> Cat jumped over the table <eos>
+<sos> Cat caught a fish in the pond <eos>
+<sos> Cat is naughty <eos>
+<sos> The sun rises in the east <eos>
+<sos> She enjoys reading books <eos>
+<sos> Cats are independent animals <eos>
+<sos> I am going to the market <eos>
+<sos> The flowers are blooming beautifully <eos>
+<sos> He is studying for his exams <eos>
+<sos> The coffee is too hot to drink <eos>
+<sos> They are planning a trip to the mountains <eos>
+<sos> My favorite color is blue <eos>
+<sos> The weather is quite pleasant today <eos>
+<sos> The cat is sleeping on the couch <eos>
+<sos> She loves to paint in her free time <eos>
+<sos> The sun is shining brightly today <eos>
+<sos> He went for a walk in the park <eos>
+<sos> They are playing soccer in the field <eos>
+<sos> The flowers are blooming in the garden <eos>
+<sos> She baked a cake for her friend <eos>
+<sos> The children are playing with their toys <eos>
+<sos> He is reading a book about history <eos>
+<sos> The birds are singing in the trees <eos>
+<sos> She is writing a letter to her cousin <eos>
+<sos> The dog is chasing its tail <eos>
+<sos> He is working on his computer <eos>
+<sos> The car is parked in the driveway <eos>
+<sos> She is watching her favorite movie <eos>
+<sos> The kids are riding their bicycles <eos>
+<sos> He is fixing the broken chair <eos>
+<sos> The wind is blowing through the trees <eos>
+<sos> She is knitting a scarf for winter <eos>
+<sos> The train is arriving at the station <eos>
+<sos> He is cooking dinner for his family <eos>
+<sos> The sun is setting over the horizon <eos>
+<sos> She is practicing the piano every day <eos>
+<sos> The coffee is brewing in the kitchen <eos>
+<sos> He is watering the plants in the garden <eos>
+<sos> The clouds are gathering in the sky <eos>
+<sos> She is preparing for her final exams <eos>
+<sos> The dog is barking at the mailman <eos>
+<sos> He is assembling a new bookshelf <eos>
+<sos> The river is flowing peacefully <eos>
+<sos> She is learning a new language <eos>
+<sos> The leaves are falling from the trees <eos>
+<sos> He is playing the guitar in his room <eos>
+<sos> The snow is covering the ground <eos>
+<sos> She is organizing her photo album <eos>
+<sos> The ocean waves are crashing on the shore <eos>
+<sos> He is painting the walls of his house <eos>
+<sos> The stars are twinkling in the night sky <eos>
+<sos> She is making a quilt for her bed <eos>
+<sos> The fire is crackling in the fireplace <eos>
+<sos> He is writing a story for his class <eos>
+<sos> The children are building a sandcastle <eos>
+<sos> She is jogging along the beach <eos>
+<sos> The flowers are swaying in the breeze <eos>
+<sos> He is fixing the engine of his car <eos>
+<sos> The moon is shining brightly tonight <eos>
+<sos> She is planting vegetables in her garden <eos>
+<sos> The wind is howling through the trees <eos>
+<sos> He is cleaning the windows of his house <eos>
+<sos> The rain is falling steadily <eos>
+<sos> She is drawing a picture of her cat <eos>
+<sos> The train is traveling through the countryside <eos>
+<sos> He is hiking up the mountain <eos>
+<sos> The sun is peeking through the clouds <eos>
+<sos> She is sewing a dress for her sister <eos>
+<sos> The children are jumping in puddles <eos>
+<sos> He is playing chess with his friend <eos>
+<sos> The snowflakes are drifting to the ground <eos>
+<sos> She is arranging flowers in a vase <eos>
+<sos> The birds are building a nest in the tree <eos>
+<sos> He is repairing the roof of his house <eos>
+<sos> The river is rushing past the rocks <eos>
+<sos> She is decorating her living room <eos>
+<sos> The children are playing hide and seek <eos>
+<sos> He is fishing by the lake <eos>
+<sos> The leaves are rustling in the wind <eos>
+<sos> She is studying for her math test <eos>
+<sos> The clouds are floating across the sky <eos>
+<sos> He is baking bread in the oven <eos>
+<sos> The sun is shining through the window <eos>
+<sos> She is painting a landscape on canvas <eos>
+<sos> The kids are flying kites in the park <eos>
+<sos> He is planting a tree in his backyard <eos>
+<sos> The waves are lapping at the shore <eos>
+<sos> She is making a birthday card <eos>
+<sos> The fireflies are glowing in the dark <eos>
+<sos> He is fixing the leak in the roof <eos>
+<sos> The wind is blowing the leaves around <eos>
+<sos> She is organizing her bookshelf <eos>
+<sos> The rain is pouring down heavily <eos>
+<sos> He is mowing the lawn in his yard <eos>
+<sos> The flowers are blooming in the spring <eos>
+<sos> She is playing the violin beautifully <eos>
+<sos> The children are laughing and playing <eos>
+<sos> He is painting the fence white <eos>
+<sos> The moon is hidden behind the clouds <eos>
+<sos> She is reading a mystery novel <eos>
+<sos> The snow is falling gently <eos>
+<sos> He is building a birdhouse <eos>
+<sos> The river is calm and peaceful <eos>
+<sos> She is writing a poem about nature <eos>
+<sos> The dog is digging in the garden <eos>
+<sos> He is playing basketball with his friends <eos>
+<sos> The sun is rising in the morning <eos>
+<sos> She is knitting a sweater for her mother <eos>
+<sos> The kids are playing tag in the yard <eos>
+<sos> He is fixing the broken lamp <eos>
+<sos> The stars are shining brightly <eos>
+<sos> She is baking cookies for her neighbors <eos>
+<sos> The wind is blowing softly <eos>
+<sos> He is assembling a model airplane <eos>
+<sos> The rain is tapping on the window <eos>
+<sos> She is writing in her journal <eos>
+<sos> The waves are crashing on the rocks <eos>
+<sos> He is taking a nap on the couch <eos>
+<sos> The flowers are wilting in the heat <eos>
+<sos> She is practicing yoga every morning <eos>
+<sos> The dog is barking at the squirrels <eos>
+<sos> He is polishing his shoes <eos>
+<sos> The sun is setting in the west <eos>
+<sos> She is reading a science fiction book <eos>
+<sos> The snow is covering the trees <eos>
+<sos> He is playing the drums in the basement <eos>
+<sos> The river is winding through the valley <eos>
+<sos> She is painting her nails <eos>
+<sos> The children are playing in the sandbox <eos>
+<sos> He is washing his car in the driveway <eos>
+<sos> The leaves are changing color in the fall <eos>
+<sos> She is baking a pie for dessert <eos>
+<sos> The wind is whistling through the trees <eos>
+<sos> He is fixing the broken clock <eos>
+<sos> The sun is shining on the beach <eos>
+<sos> She is reading a book under the tree <eos>
+<sos> The kids are playing soccer in the park <eos>
+<sos> He is building a snowman <eos>
+<sos> The flowers are blooming in the meadow <eos>
+<sos> She is drawing a picture of her dog <eos>
+<sos> The waves are gently rolling in <eos>
+<sos> He is repairing the broken bicycle <eos>
+<sos> The stars are shining in the sky <eos>
+<sos> She is sewing a patch onto her jeans <eos>
+<sos> The rain is dripping from the eaves <eos>
+<sos> He is cutting the grass in his yard <eos>
+<sos> The river is flowing through the forest <eos>
+<sos> She is cooking a delicious meal <eos>
+<sos> The children are playing on the swings <eos>
+<sos> He is fixing the broken door <eos>
+<sos> The sun is peeking through the leaves <eos>
+<sos> She is painting her bedroom walls <eos>
+<sos> The snow is piling up outside <eos>
+<sos> He is reading a biography <eos>
+<sos> The flowers are blooming in the sun <eos>
+<sos> She is knitting a hat for her friend <eos>
+<sos> The kids are playing in the snow <eos>
+<sos> He is writing a letter to his grandmother <eos>
+<sos> The wind is rustling the leaves <eos>
+<sos> She is baking bread from scratch <eos>
+<sos> The dog is chasing a ball <eos>
+<sos> He is fishing in the river <eos>
+<sos> The clouds are drifting by <eos>
+<sos> She is planting flowers in the garden <eos>
+<sos> The children are playing on the playground <eos>
+<sos> He is fixing the broken faucet <eos>
+<sos> The sun is shining on the water <eos>
+<sos> She is reading a book by the fire <eos>
+<sos> The waves are crashing on the shore <eos>
+<sos> He is painting the shed <eos>
+<sos> The stars are twinkling above <eos>
+<sos> She is making a scrapbook <eos>
+<sos> The rain is falling softly <eos>
+<sos> He is mowing the lawn <eos>
+<sos> The flowers are bright and colorful <eos>
+<sos> She is playing the piano <eos>
+<sos> The kids are riding their bikes <eos>
+<sos> He is fixing the car <eos>
+<sos> The river is flowing gently <eos>
+<sos> She is sewing a dress <eos>
+<sos> The dog is barking at the cat <eos>
+<sos> He is painting the garage <eos>
+<sos> The sun is setting behind the mountains <eos>
+<sos> She is reading a novel <eos>
+<sos> The waves are crashing against the rocks <eos>
+<sos> He is building a bird feeder <eos>
+<sos> The stars are shining brightly above <eos>
+<sos> She is baking cookies <eos>
+<sos> The wind is blowing the leaves <eos>
+<sos> He is playing the guitar <eos>
+<sos> The flowers are blooming in the field <eos>
+<sos> She is planting a vegetable garden <eos>
+<sos> The children are playing in the yard <eos>
+<sos> He is fixing the broken table <eos>
+<sos> The sun is shining through the clouds <eos>
+<sos> She is reading a romance novel <eos>
+<sos> The snow is falling gently to the ground <eos>
+<sos> He is painting the front door <eos>
