@@ -8,7 +8,12 @@
 #include <queue>
 #include <numeric>
 #include <ctime>
+#include <cstdlib>
+#include <iomanip>
+
 #define ll long long
+#define ld double
+#define modn 100
 #define VANSHU2308                \
     ios_base::sync_with_stdio(0); \
     cin.tie(0);                   \
@@ -33,12 +38,12 @@ void display_mat(vector<vector<T> > &v){
     cout << endl;
 }
 
-double round_to(double value, double precision = 0.0001){
+ld round_to(ld value, ld precision = 0.0001){
     return round(value / precision) * precision;
 }
 
-vector<vector<double> > mat;
-vector<double> heuristic;
+vector<vector<ld> > mat;
+vector<ld> heuristic;
 vector<string> vocab;
 int L, n;
 
@@ -47,10 +52,10 @@ private:
 public:
     int i, seq_len;
     vector<int> seq;
-    double cum_cost, hn;
+    ld cum_cost, hn;
     string type;
 
-    Node(int i, double cum_cost, int seq_len, vector<int> seq, double hn = 0, string type = "ucs") {
+    Node(int i, ld cum_cost, int seq_len, vector<int> seq, ld hn = 0, string type = "ucs") {
         this->i = i;
         this->cum_cost = cum_cost;
         this->hn = hn;
@@ -59,21 +64,22 @@ public:
         this->type = type;
     }
 
-    double get_fn() {
-        if (this->type == "ucs") {
+    ld get_fn() {
+        if (this->type == "UCS") {
             return this->cum_cost;
         }
-        else if (this->type == "greedy") {
+        else if (this->type == "Greedy") {
             return this->hn;
         }
-        else {
+        else if (this->type == "A_star") {
             return this->cum_cost + this->hn;
         }
+        return 0;
     }
 
-    void display() {
-        printf("%d %f\n", i, cum_cost);
-    }
+    // void display() {
+    //     printf("%d %f\n", i, cum_cost);
+    // }
     vector<int> get_seq() {
         return this->seq;
     }
@@ -87,7 +93,7 @@ public:
     }
 };
 
-vector<int> search(int &total, string type = "ucs") {
+vector<int> search(int &total, string type = "UCS") {
     vector<int> res;
     priority_queue<Node, vector<Node>, Fringe> pq;
     vector<int> init_seq;
@@ -111,7 +117,7 @@ vector<int> search(int &total, string type = "ucs") {
             if (i == curr.i) { continue; }
 
             int row = curr.i == -1 ? L : curr.i;
-            double child_cost = round_to(curr.cum_cost * mat[row][i]);
+            ld child_cost = round_to(curr.cum_cost * mat[row][i]);
             vector<int> child_seq = curr.get_seq();
             child_seq.push_back(i);
             Node child(i, child_cost, curr.seq_len + 1, child_seq, heuristic[i], type);
@@ -122,27 +128,40 @@ vector<int> search(int &total, string type = "ucs") {
     return res;
 }
 
-double score(vector<int> &seq) {
-    double score = 1;
+ld score(vector<int> &seq) {
+    ld score = 1;
     for (int i = 1; i < seq.size(); i++) {
         int token_idx = seq[i], prev = seq[i - 1];
         score *= mat[prev == -1 ? L : prev][seq[i]];
-        score = round_to(score);
     }
-    score *= mat[L + 1][seq[n]];
+
+    // score *= mat[L + 1][seq[n]];
     return score;
 }
 
 void normalize() {
     for (int i = 0; i < L + 2; i++) {
-        double row_sum = accumulate(mat[i].begin(), mat[i].end(), 0.0);
+        ld row_sum = accumulate(mat[i].begin(), mat[i].end(), 0.0);
         for (int j = 0; j < L; j++) {
             mat[i][j] /= (row_sum > 0 ? row_sum : 1);
         }
     }
 }
 
+
+void generate_random_transition(){
+    mat = vector<vector<ld> > (L+2, vector<ld>(L, 0));
+    for(int i=0; i<L+2; i++){
+        for(int j=0; j<L; j++){
+            mat[i][j] = rand() % modn;
+        }
+    }
+    normalize();
+}
+
+
 int main() {
+    // Implementation for working example 
     ifstream vocab_file("./vocab2.txt"), trans_file("./trans2.txt");
     string str;
 
@@ -153,7 +172,7 @@ int main() {
     }
 
     while (getline(trans_file, str)) {
-        mat.push_back(vector<double>());
+        mat.push_back(vector<ld>());
         while (str.find(' ') != string::npos) {
             string word = str.substr(0, str.find(' '));
             str = str.substr(str.find(' ') + 1);
@@ -162,14 +181,14 @@ int main() {
         mat.back().push_back(stod(str));
     }
 
-    n = 9;
+    n = 10;
     L = mat.size() - 2;
 
     normalize();
 
     heuristic = mat.back();
 
-    string types[3] = {"ucs", "greedy", "astar"};
+    string types[] = {"UCS", "A_star", "Greedy"};
     for (int _ = 0; _ < 3; _++) {
         printf("===================== %s =====================\n", types[_].c_str());
         int nodes_explored = 0;
@@ -179,7 +198,6 @@ int main() {
         clock_t end = clock();
         double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
 
-        printf("Total score: %f\n", score(idxs));
         printf("Time elapsed: %f\n", elapsed_secs);
         printf("Total nodes explored: %d\n", nodes_explored);
         string ans = "\n";
@@ -191,5 +209,45 @@ int main() {
         cout << ans << endl;
     }
 
+
+    cout << endl << endl;
+    // Time complexity Analysis 
+
+    // <type, enum(time, nodes_exp), val>  
+    vector<vector<vector<ld> > > stats(3, vector<vector<ld> >(2));
+    
+
+    for(L=5; L<=15; L+=5){
+        generate_random_transition();
+        heuristic = mat.back();
+
+        for(n=3; n<8; n++){
+
+            for (int _ = 0; _ < 3; _++) {
+                int nodes_explored = 0;
+
+                clock_t begin = clock();
+                vector<int> idxs = search(nodes_explored, types[_]);
+                clock_t end = clock();
+                double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
+
+                stats[_][0].push_back(elapsed_secs);
+                stats[_][1].push_back(nodes_explored);
+            }
+
+        }
+
+    }
+
+    cout << "---------------------- Time Complexity Analsyis -----------------------\n\n" ; 
+    std::cout << std::left;
+	std::cout <<
+	    setw(25) << "[Algorithm]" << setw(25) << "[Avg Time] (secs)" << setw(25) << "[Avg Nodes explored]" << '\n' 
+        << setw(30) <<  "-----------------------------------------------------------------------\n" << 
+	    setw(25) << "UCS"   << setw(25) << accumulate(stats[0][0].begin(), stats[0][0].end(), 0.0)/15   << setw(25) << accumulate(stats[0][1].begin(), stats[0][1].end(), 0)/15   << '\n' <<
+	    setw(25) << "A*"  << setw(25) << accumulate(stats[1][0].begin(), stats[1][0].end(), 0.0)/15     << setw(25) << accumulate(stats[1][1].begin(), stats[1][1].end(), 0)/15      << '\n' <<
+	    setw(25) << "Greedy"   << setw(25) << accumulate(stats[2][0].begin(), stats[2][0].end(), 0.0)/15     << setw(25) << accumulate(stats[2][1].begin(), stats[2][1].end(), 0)/15      << '\n';
+    cout << endl;
     return 0;
 }
+
