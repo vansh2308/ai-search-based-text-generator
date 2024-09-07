@@ -2,8 +2,10 @@
 
 NLP text generator using search strategies like A*, UCS & Greedy  using bigram conditional probabilities
 
-<img src="./static/ss2.png" width="100%">
-<img src="./static/ss1.png" width="100%">
+<p align="center">
+    <img src="./static/ss2.png" width="70%">
+    <img src="./static/ss1.png" width="70%">
+</p>
 
 
 ### Features
